@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/tema-6.iml" filepath="$PROJECT_DIR$/.idea/tema-6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tema6DemoQAbrowserWindows/tema6HerokuappAlerts.iml" filepath="$PROJECT_DIR$/tema6DemoQAbrowserWindows/tema6HerokuappAlerts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tema6Herokuapp/tema6HerokuappAlerts (1).iml" filepath="$PROJECT_DIR$/tema6Herokuapp/tema6HerokuappAlerts (1).iml" />
     </modules>
   </component>
 </project>
