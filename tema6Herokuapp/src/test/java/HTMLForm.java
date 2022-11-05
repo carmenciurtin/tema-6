@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
@@ -16,9 +17,9 @@ public class HTMLForm {
     }
 
     public static void campuriDate() {
-        ChromeDriver driver = null;
+        RemoteWebDriver driver = null;
         try {
-            driver = WebBrowserManager.getChromedriver();
+            driver = WebBrowserManager.getRemoteChromeDriver();
             driver.get("https://testpages.herokuapp.com/styled/basic-html-form-test.html");
             WebElement submitButton = driver.findElement(By.cssSelector("input[type='submit']"));
             WebElement username = driver.findElement(By.name("username"));

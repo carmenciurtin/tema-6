@@ -1,6 +1,7 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 import java.io.File;
@@ -14,7 +15,7 @@ public class HTML5Form {
     }
 
     public static void campuriDate() {
-        ChromeDriver driver = null;
+        RemoteWebDriver driver = null;
 
         try {
             driver = WebBrowserManager.getChromedriver();

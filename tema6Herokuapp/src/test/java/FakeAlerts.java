@@ -1,9 +1,11 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 public class FakeAlerts {
 
@@ -12,10 +14,10 @@ public class FakeAlerts {
         modalDialogTest();
     }
 
-    public static void alertBoxTest() {
-        ChromeDriver driver = null;
+    public static void alertBoxTest() throws MalformedURLException {
+        RemoteWebDriver driver = null;
         try {
-            driver = WebBrowserManager.getChromedriver();
+            driver = WebBrowserManager.getRemoteChromeDriver();
             driver.get("https://testpages.herokuapp.com/styled/alerts/fake-alert-test.html");
 
             WebElement showAlertBox = driver.findElement(By.id("fakealert"));
