@@ -1,23 +1,24 @@
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 public class Alerts {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
        // alertBoxTest();
        // confirmBoxTest();
         promptBoxTest();
     }
 
     public static void alertBoxTest() throws IOException {
-        ChromeDriver driver = null;
+        RemoteWebDriver driver = null;
         try {
-            driver = WebBrowserManager.getChromedriver();
+            driver = WebBrowserManager.getRemoteChromeDriver();
             driver.get("https://testpages.herokuapp.com/styled/alerts/alert-test.html");
 
             WebElement showAlertBox = driver.findElement(By.id("alertexamples"));
@@ -32,10 +33,10 @@ public class Alerts {
             }
         }
     }
-    public static void confirmBoxTest(){
-        ChromeDriver driver = null;
+    public static void confirmBoxTest() throws MalformedURLException {
+        RemoteWebDriver driver = null;
         try{
-            driver = WebBrowserManager.getChromedriver();
+            driver = WebBrowserManager.getRemoteChromeDriver();
             driver.get("https://testpages.herokuapp.com/styled/alerts/alert-test.html");
 
             WebElement showConfirmBox = driver.findElement(By.id("confirmexample"));
@@ -61,8 +62,8 @@ public class Alerts {
         }
 
     }
-    public static void promptBoxTest()  {
-        ChromeDriver driver = WebBrowserManager.getChromedriver();
+    public static void promptBoxTest() throws MalformedURLException {
+        RemoteWebDriver driver = WebBrowserManager.getRemoteChromeDriver();
 
         try{
             driver.get("https://testpages.herokuapp.com/styled/alerts/alert-test.html");
@@ -98,7 +99,7 @@ public class Alerts {
             driver.quit();
         }
     }
-    public static boolean isAlertOpened(ChromeDriver driver) {
+    public static boolean isAlertOpened(RemoteWebDriver driver) {
         try {
             driver.switchTo().alert();
             return true;

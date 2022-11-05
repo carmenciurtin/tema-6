@@ -1,6 +1,6 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,10 +11,10 @@ public class BrowserWindows {
         newTabs();
     }
     public static void newTabs() {
-        ChromeDriver driver = null;
+        RemoteWebDriver driver = null;
 
         try {
-            driver = WebBrowserManager.getChromedriver();
+            driver = WebBrowserManager.getRemoteChromeDriver();
 
             driver.get("https://demoqa.com/browser-windows");
             driver.manage().window().maximize();
